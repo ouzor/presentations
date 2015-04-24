@@ -31,12 +31,17 @@ FIXME: Audience view: word puzzle from responses
 
 ## What do others think?
 
-"Data Science is statistics on a Mac" -[Big Data Borat on Twitter](https://twitter.com/bigdataborat/status/372350993255518208)
+"Data Science is statistics on a Mac"  
+[-Big Data Borat on Twitter][borat]
 
-"Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it..." -[Dan Ariely on Facebook](https://www.facebook.com/dan.ariely/posts/904383595868)
+"Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it..."  
+[-Dan Ariely on Facebook][donairely]
 
-"Data science is the process of formulating a quantitative question that can be answered with data, collecting and cleaning the data, analyzing the data, and communicating the answer to the question to a relevant audience." -[simply stats][simplystats-ds]
+"Data science is the process of formulating a quantitative question that can be answered with data, collecting and cleaning the data, analyzing the data, and communicating the answer to the question to a relevant audience."  
+[-simply stats][simplystats-ds]
 
+[borat]: https://twitter.com/bigdataborat/status/372350993255518208
+[donairely]: https://www.facebook.com/dan.ariely/posts/904383595868
 [simplystats-ds]: http://simplystatistics.org/2015/03/17/data-science-done-well-looks-easy-and-that-is-a-big-problem-for-data-scientists/
 
 ## Questions today

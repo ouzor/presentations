@@ -1,19 +1,41 @@
-p {
-    font-family: "Times New Roman", Times, serif;
-} 
-
-body {
+/* Set Reaktor background colour */
+slide {
     background-color: #34bdc5;
 }
 
+
+/* Set font colour to white (need to set in multiple places*/
+/* body {
+    color: #ffffff;
+} */
 h1 {
-    background-color: #34bdc5;
-}
-
+    color: #ffffff;
+} 
+h2 {
+    color: #ffffff;
+} 
 p {
-    background-color: #34bdc5;
+    color: #ffffff;
+} 
+li {
+    color: #ffffff;
 } 
 
+.title-slide hgroup h1{
+  color: #ffffff;
+}
+
+.title-slide hgroup p {
+  color: #ffffff;
+}
+
+
+
+a {
+  color: #4a4aff;
+}
+
+/*
 b, strong {
   font-weight: bold;
 }
@@ -37,3 +59,4 @@ slides > slide {
   transition: opacity 0.6s ease-in 0.4s;
   opacity: 0;
 }
+*/
