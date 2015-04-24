@@ -1,0 +1,39 @@
+p {
+    font-family: "Times New Roman", Times, serif;
+} 
+
+body {
+    background-color: #34bdc5;
+}
+
+h1 {
+    background-color: #34bdc5;
+}
+
+p {
+    background-color: #34bdc5;
+} 
+
+b, strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+slides > slide {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.auto-fadein {
+  -webkit-transition: opacity 0.6s ease-in;
+  -webkit-transition-delay: 0.4s;
+  -moz-transition: opacity 0.6s ease-in 0.4s;
+  -o-transition: opacity 0.6s ease-in 0.4s;
+  transition: opacity 0.6s ease-in 0.4s;
+  opacity: 0;
+}
