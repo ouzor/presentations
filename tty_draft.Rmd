@@ -85,6 +85,8 @@ FIXME: Audience view: word puzzle from responses
 * Agile
 * Lean
 
+# Part 2: Data science at Reaktor
+
 ## My background
 
 Studies
@@ -110,7 +112,9 @@ Sum of some vague general direction + a lot of chances/coincidences
 * House prices from HS vs. Reaktor
 
 
-# Part 2: Data science in practice
+
+
+# Part 3: Data science in practice
 
 ## 
 
@@ -124,7 +128,7 @@ FIXME: add photos: ifhackathon, taulu
 
 ## Data science skills
 
-FIXME!
+FIXME! think about adding Venn diagram first
 
 <center>
 <img src="http://www.marketingdistillery.com/wp-content/uploads/2014/11/mds_f.png" alt="skill set" style="width: 100%"/>
@@ -203,7 +207,7 @@ Check also iPython notebooks!
 
 
 
-# Part 3: Data-driven culture
+# Part 4: Data-driven culture
 
 ## What is important in the data science process?
 
@@ -242,7 +246,7 @@ FIXME: fix these
 * Sami Honkonen's quote: "One experiment is better than a thousand meetings"
 * Evidence-based medicine
 
-# Part 4: Is data almighty?
+# Part 5: Is data almighty?
 
 ## Hype
 
@@ -262,14 +266,27 @@ Source: [Gartner][gartner-hypecurve]
 
 Source: [Tylergive](http://tylervigen.com/)
 
-## OCCAM
+## Problems with Big Data?
 
+Big data is 
+
+* **O**bservational: much of the new data come from sensors or tracking devices that monitor continuously and indiscriminately without design, as opposed to questionnaires, interviews, or experiments with purposeful design
+* Lacking **C**ontrols: controls are typically unavailable, making valid comparisons and analysis more difficult
+* Seemingly **C**omplete: the availability of data for most measurable units and the sheer volume of data generated is unprecedented, but more data creates more false leads and blind alleys, complicating the search for meaningful, predictable structure
+* **A**dapted: third parties collect the data, often for a purposes unrelated to the data scientists’, presenting challenges of interpretation
+* **M**erged: different datasets are combined, exacerbating the problems relating to lack of definition and misaligned objectives
+
+Source: [Kaiser Fung on HBR][occam]
+
+[occam]: https://hbr.org/2014/03/google-flu-trends-failure-shows-good-data-big-data/
 
 * Big data hype stuff: "The end of theory", others?
 
-## Uncertainty vs. risk
 
-* Kahneman, biases
+## What can go wrong?
+
+* sudenkuopat by Louhia
+* 
 
 ## Some future trends
 
@@ -293,3 +310,4 @@ Source: [Tylergive](http://tylervigen.com/)
 * Try & share & discuss
 * Community: Hki DS + Meetup, Tre?, #r-project
 * Your background: network of paired words
+* Uncertainty vs. risk: * Kahneman, biases
