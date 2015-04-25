@@ -10,6 +10,7 @@ output:
 
 ## TODO
 
+* parempi otsikko!
 * Survey: long https://docs.google.com/forms/d/1qsELfWohq0JKWV2w72Th026zzNcIhpdKbDnOevY9Frs/viewform
 * and short: http://goo.gl/forms/5mUOc6wafr
 
@@ -99,6 +100,8 @@ Studies
 * MSc: Bioinformation technology at HUT
 * PhD: Bioinformatics at Aalto
 
+Interests: statistics, probabilistic (Bayesian) modeling, information visualization, open source/data/science
+
 Open stuff
 
 Reaktor
@@ -106,6 +109,14 @@ Reaktor
 Sum of some vague general direction + a lot of chances/coincidences
 
 ## Reaktor Data Science
+
+
+Statistical modeling
+
+* dealing with noisy and missing data
+* taking uncertainty into account
+* predicting future events
+
 
 ## Biking and weather
 
@@ -293,6 +304,8 @@ Source: [Kaiser Fung on HBR][occam]
 * sudenkuopat by Louhia
 * 
 
+* many things can not be predicted (Black Swan)
+
 ## Some future trends
 
 * Digitalization
@@ -303,6 +316,7 @@ Source: [Kaiser Fung on HBR][occam]
 
 ## Conclusions
 
+* amount of data does not matter, more important is where the data comes from (OCCAM)
 * Data can help in many ways
 * Data-driven culture is the key
 * Testing/experimentation
