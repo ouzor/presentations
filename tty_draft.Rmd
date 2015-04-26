@@ -189,7 +189,9 @@ FIXME: add photos: ifhackathon, taulu
 
 ## Data science skills
 
-FIXME! think about adding Venn diagram first
+FIXME! think about adding Venn diagram from Conway first, maybe also this: http://policyviz.com/communicating-research-build-a-unicorn-dont-look-for-one/
+
+individual vs. team!
 
 <center>
 <img src="http://www.marketingdistillery.com/wp-content/uploads/2014/11/mds_f.png" alt="skill set" style="width: 100%"/>
