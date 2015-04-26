@@ -1,5 +1,5 @@
 ---
-title: "Data Science"
+title: "Data, science"
 author:
   name: 'Juuso Parkkinen, @ouzor, data scientist at @ReaktorNow'
 date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha"
@@ -21,14 +21,17 @@ Style
 * bigger figures (right col, or bg?), include source also
 * reaktor logo 
 * include some funny stuff from Kippt-fun, e.g. xkcd, dilbert?
+* make Source texts small!
 
 Slide sources somewhere, also slideshare link?
 
-# Part 1: What is data science
+# Part 1: What is data science?
 
 ## What do you think?
 
-FIXME: Audience view: word puzzle from responses
+<center>
+<img src="./wordcloud1.png" alt="use cases" style="height: 500px;"/>
+</center>
 
 ## What do others think?
 
@@ -45,51 +48,93 @@ FIXME: Audience view: word puzzle from responses
 [donairely]: https://www.facebook.com/dan.ariely/posts/904383595868
 [simplystats-ds]: http://simplystatistics.org/2015/03/17/data-science-done-well-looks-easy-and-that-is-a-big-problem-for-data-scientists/
 
-## Questions today
+## What do I think?
+
+Important questions:
 
 * Where can data science be applied?
-* What is data science in practice?
-* What is data-driven culture?
-* What data can not do?
+* What is doing data science in practice?
+* What does it take to be data-driven?
+* What data science can NOT do?
 
 ## Where can data be applied
 
-* Research
-    * Traditional natural sciences
-    * More and more also in social sciences
 * Business
-    * Optimising operations
-    * Improved services
+    * Improved (personalised) services
+    * Optimised operations
+* Quantitative research
+    * Natural sciences
+    * Also social sciences
+* Social good
 * Journalism
 * Software development (lean / agile)
-* Personal life: Quantified self
-* Social good
+* Quantified self
+* ...
+
+##  Improved (?) personalised services
 
 
-## Data science in business
+<center>
+<img src="http://stanford2009.wikispaces.com/file/view/recommender.JPG/71899791/815x365/recommender.JPG" alt="use cases" style="width: 500px;"/>
+<img src="http://cdn.cantechletter.com/wp-content/uploads/2013/01/netflix-recommendations-400x280.jpg" alt="use cases" style="width: 300px;"/>
+</center>
 
-* Amazon
-* Netflix
 
-## Social data science
+<div class="columns-2">
+</div>
 
-* Nate Silver
-* Hans Rosling
+Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and [cantech letter](http://www.cantechletter.com/2013/01/will-predictive-analytics-in-education-widen-the-gap-between-the-arts-and-sciences0128/)
+
+
+
+##
+
+<center>
+<img src="http://datapsych.weebly.com/uploads/2/5/7/8/25783390/5460484_orig.jpg" alt="use cases" style="width: 100%;"/>
+</center>
+
+Nate Silver predicting the Presidential election results in 2012
+
+Source: [DataPsych](http://datapsych.weebly.com/blog/mining-silvers-gold-the-basics-behind-nate-silvers-election-prediction-strategies)
+
+## 
+
+<center>
+<img src="http://everythingisnaked.com/wp-content/uploads/2011/08/gap-minder.jpg" alt="use cases" style="height: 500px;"/>
+</center>
+
+Hans Rosling communicating facts about the world
+
+Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty-of-visualized-statistics/)
+
+##
+
+<center>
+<img src="http://www.datakind.org/static/media/uploads/blog/.thumbnails/GiveDirectly-600x340.jpg" alt="use cases" style="height: 300px;"/>
+</center>
+
+Using Satellite Images to Understand Poverty
+
+Source: [DataKind](http://www.datakind.org/blog/using-satellite-images-to-understand-poverty/)
+
+## 
+
+<center>
+<img src="http://static1.squarespace.com/static/50e4b513e4b0837383d619f3/t/52e67fbee4b063fbaac1e913/1390837705546/eviction+filings+to+homeless.jpg?format=1000w" alt="use cases" style="height: 300px;"/>
+</center>
+
+How can big data be used to prevent homelessness?
+
+Source: [Sumall.org](http://www.sumall.org/homelessness/)
+
+
+
 
 ## Data journalism
 
 * Yle: Teemo
 * HS: Esa
 
-## Data4good
-
-* Dataking: village roof stuff
-* Sumall.org: NYC eviction prediction
-
-## Other data-driven things
-
-* Agile
-* Lean
 
 # Part 2: Data science at Reaktor
 
@@ -257,6 +302,7 @@ FIXME: fix these
 
 ## Experimentation & evidence-based decision making
 
+* A/B testing
 * Lean startup
 * Agile development
 * Sami Honkonen's quote: "One experiment is better than a thousand meetings"
@@ -301,9 +347,10 @@ Source: [Kaiser Fung on HBR][occam]
 
 ## What can go wrong?
 
+* stats: http://www.analyticbridge.com/profiles/blogs/statistical-thinking-is-not-science-fiction-but-a-necessity
 * sudenkuopat by Louhia
-* 
-
+* p-values (Gelman stuff), crisis in science
+* understanding uncertainty & probabilities (Kahneman, biases)
 * many things can not be predicted (Black Swan)
 
 ## Some future trends
@@ -330,3 +377,5 @@ Source: [Kaiser Fung on HBR][occam]
 * Community: Hki DS + Meetup, Tre?, #r-project
 * Your background: network of paired words
 * Uncertainty vs. risk: * Kahneman, biases
+* Learning the basics: http://www.sharpsightlabs.com/start-with-data-visualization-manipulation/
+* There's more, e.g. [here](http://blog.dominodatalab.com/10-interesting-uses-of-data-science/), but we do not hear about the best business cases...
