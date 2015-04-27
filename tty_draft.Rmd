@@ -6,6 +6,8 @@ date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohs
 output:
   ioslides_presentation:
     css: custom.css
+    widescreen: false
+    smaller: false
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE}
@@ -30,17 +32,21 @@ library("RCurl")
 
 * try presentation mode
 * try including html frames from Yle and HS
+* check slides by others (Aalto)
 * parempi otsikko!
+* check this. 
+
+* reaktor logo on the first page at least
+* Slide sources somewhere, also slideshare link?
+
+<article class="smaller">
+* make Source texts small!
+</article>
 
 Style
 
 * two columns
 * bigger figures (right col, or bg?), include source also
-* reaktor logo on the first page at least
-* make Source texts small!
-* include some funny stuff from Kippt-fun, e.g. xkcd, dilbert?
-
-Slide sources somewhere, also slideshare link?
 
 # Part 1: What is data science?
 
@@ -130,7 +136,12 @@ Working with data offers a wide range of interesting opportunities!
 <div class="columns-2">
 </div>
 
-Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and [cantech letter](http://www.cantechletter.com/2013/01/will-predictive-analytics-in-education-widen-the-gap-between-the-arts-and-sciences0128/)
+<article class="smaller">
+* Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and [cantech letter](http://www.cantechletter.com/2013/01/will-predictive-analytics-in-education-widen-the-gap-between-the-arts-and-sciences0128/)
+</article>
+
+
+
 
 ##
 
@@ -140,8 +151,9 @@ Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and 
 
 Nate Silver predicting the Presidential election results in 2012
 
-Source: [DataPsych](http://datapsych.weebly.com/blog/mining-silvers-gold-the-basics-behind-nate-silvers-election-prediction-strategies)
-
+<article class="smaller">
+* Source: [DataPsych](http://datapsych.weebly.com/blog/mining-silvers-gold-the-basics-behind-nate-silvers-election-prediction-strategies)
+</article>
 
 ##
 
@@ -151,7 +163,9 @@ Source: [DataPsych](http://datapsych.weebly.com/blog/mining-silvers-gold-the-bas
 
 Using Satellite Images to Understand Poverty
 
-Source: [DataKind](http://www.datakind.org/blog/using-satellite-images-to-understand-poverty/)
+<article class="smaller">
+* Source: [DataKind](http://www.datakind.org/blog/using-satellite-images-to-understand-poverty/)
+</article>
 
 ## 
 
@@ -161,18 +175,25 @@ Source: [DataKind](http://www.datakind.org/blog/using-satellite-images-to-unders
 
 Using big data to prevent homelessness in New York
 
-Source: [Sumall.org](http://www.sumall.org/homelessness/)
+<article class="smaller">
+* Source: [Sumall.org](http://www.sumall.org/homelessness/)
+</article>
 
+## 
 
+<iframe title="Yle nelikenttä" height="400" src="http://svenska.yle.fi/dataviz/2015/fyrfalt/nelikentta.html" frameborder="1" allowfullscreen></iframe>
 
-
-## Data journalism
-
+<!-- alternative static figure
 <center>
 <img src="./figures/yle_vaalit.png" alt="yle vaalit" style="height: 500px;"/>
 </center>
+-->
 
-Source: [Yle 13.4.2015](http://yle.fi/uutiset/kuka_on_oikeistolaisin_kuka_liberaalein__katso_miten_ehdokkaasi_asettuu_poliittiselle_nelikentalle/7919930)
+<article class="smaller">
+* Source: [Yle 13.4.2015](http://yle.fi/uutiset/kuka_on_oikeistolaisin_kuka_liberaalein__katso_miten_ehdokkaasi_asettuu_poliittiselle_nelikentalle/7919930)
+</article>
+
+
 
 
 # Part 2: Data science at Reaktor
@@ -258,20 +279,33 @@ corrplot(prop.table(p,1),method="shade",is.corr=FALSE,addCoef.col=2,
 
 ## Data science vs. data journalism?
 
+<div class="columns-2">
+
+<iframe title="HS asuntohinnat" height="250" src="http://dynamic.hs.fi/2015/asuntohinnat_postinumero/" frameborder="1" allowfullscreen></iframe>
+
+<article class="smaller">
+* Source: [HS 11.4.2015](http://www.hs.fi/talous/a1428643622153)
+</article>
+
+<center>
+<img src="./figures/kannattaakokauppa.png" alt="Kannattaako kauppa" style="height: 400px;"/>
+</center>
+
+<article class="smaller">
+* Source: Coming soon by Reaktor!
+</article>
+
+</div>
+
+<!-- alternative screenshot
 <center>
 <img src="./figures/hs_asunnot.png" alt="HS asunnot" style="height: 500px;"/>
 </center>
+-->
 
-FIXME: Add Reaktor figure
-
-Source: [HS 11.4.2015](http://www.hs.fi/talous/a1428643622153)
 
 
 ## Reaktor data science
-
-FIXME: update
-
-Open source tools
 
 Statistical modeling
 
@@ -279,6 +313,9 @@ Statistical modeling
 * taking uncertainty into account
 * predicting future events
 
+Open source tools
+
+Consulting!
 
 # Part 3: Data science in practice
 
@@ -298,11 +335,15 @@ FIXME! think about adding Venn diagram from Conway first, maybe also this: http:
 
 individual vs. team!
 
+## 
+
 <center>
 <img src="http://www.marketingdistillery.com/wp-content/uploads/2014/11/mds_f.png" alt="skill set" style="width: 100%"/>
 </center>
 
+<article class="smaller">
 [Source][marketingdistillery]
+</article>
 
 [marketingdistillery]: http://www.marketingdistillery.com/2014/11/29/is-data-science-a-buzzword-modern-data-scientist-defined/
 
@@ -501,3 +542,10 @@ Repeat why should I care!
 * Uncertainty vs. risk: * Kahneman, biases
 * Learning the basics: http://www.sharpsightlabs.com/start-with-data-visualization-manipulation/
 * There's more, e.g. [here](http://blog.dominodatalab.com/10-interesting-uses-of-data-science/), but we do not hear about the best business cases...
+
+* include some funny stuff from Kippt-fun, e.g. xkcd, dilbert?
+
+
+## Extra
+
+<iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/watch?v=wV0Ks7aS7YI??autoplay=1?html5=1" frameborder="0" allowfullscreen></iframe>
