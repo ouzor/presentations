@@ -1,27 +1,44 @@
 ---
-title: "Data, science"
+title: "Thoughts on Data Science"
 author:
-  name: 'Juuso Parkkinen, @ouzor, data scientist at @ReaktorNow'
+  name: 'Juuso Parkkinen, @ouzor, data scientist at #reaktor'
 date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha"
 output:
   ioslides_presentation:
     css: custom.css
 ---
 
+```{r setup, echo=FALSE, results='hide', message=FALSE}
+# Load packages
+library("dplyr")
+library("tidyr")
+library("reshape2")
+library("ggplot2")
+theme_set(theme_bw(base_size = 16))
+library("gridExtra")
+library("lubridate")
+library("gdata")
+library("wordcloud")
+library("tm")
+library("RColorBrewer")
+library("corrplot")
+library("RCurl")
+```
+
+
 ## TODO
 
+* try presentation mode
+* try including html frames from Yle and HS
 * parempi otsikko!
-* Survey: long https://docs.google.com/forms/d/1qsELfWohq0JKWV2w72Th026zzNcIhpdKbDnOevY9Frs/viewform
-* and short: http://goo.gl/forms/5mUOc6wafr
-
 
 Style
 
 * two columns
 * bigger figures (right col, or bg?), include source also
-* reaktor logo 
-* include some funny stuff from Kippt-fun, e.g. xkcd, dilbert?
+* reaktor logo on the first page at least
 * make Source texts small!
+* include some funny stuff from Kippt-fun, e.g. xkcd, dilbert?
 
 Slide sources somewhere, also slideshare link?
 
@@ -33,16 +50,37 @@ Slide sources somewhere, also slideshare link?
 <img src="./wordcloud1.png" alt="use cases" style="height: 500px;"/>
 </center>
 
+```{r wordcloud, echo=FALSE, message=FALSE}
+if (F) {
+# Read survey data
+source("read_google_spreadsheet.R")
+gdoc.url <- "https://docs.google.com/spreadsheets/d/19DWN0n1GBOLRpttgt9oXhObs58XxlXVW7FO72t-82TQ/pubhtml"
+temp <- readGoogleSheet(gdoc.url)
+survey.res <- cleanGoogleTable(temp, table=1)
+# Process
+keywords <- survey.res[,3] %>%
+  tolower %>%
+  gsub(";", ",", x=.) %>%
+  strsplit(split=",") %>%
+  unlist %>%
+  trim %>%
+  table
+# Make wordcloud
+set.seed(123)
+wordcloud(words=names(keywords), freq=keywords, scale=c(4,0.7), min.freq = 1,
+          random.order=FALSE, random.color=FALSE, rot.per=0.0, 
+          use.r.layout=FALSE, colors=brewer.pal(6, "Dark2"), fixed.asp=FALSE)
+}
+```
+
+
 ## What do others think?
 
-"Data Science is statistics on a Mac"  
-[-Big Data Borat on Twitter][borat]
+> * "Data Science is statistics on a Mac" [-Big Data Borat on Twitter][borat]
 
-"Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it..."  
-[-Dan Ariely on Facebook][donairely]
+> * "Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it..." [-Dan Ariely on Facebook][donairely]
 
-"Data science is the process of formulating a quantitative question that can be answered with data, collecting and cleaning the data, analyzing the data, and communicating the answer to the question to a relevant audience."  
-[-simply stats][simplystats-ds]
+> * "Data science is the process of formulating a quantitative question that can be answered with data, collecting and cleaning the data, analyzing the data, and communicating the answer to the question to a relevant audience."  [-simply stats][simplystats-ds]
 
 [borat]: https://twitter.com/bigdataborat/status/372350993255518208
 [donairely]: https://www.facebook.com/dan.ariely/posts/904383595868
@@ -54,10 +92,19 @@ Important questions:
 
 * Where can data science be applied?
 * What is doing data science in practice?
-* What does it take to be data-driven?
+* What does it mean to be data-driven?
 * What data science can NOT do?
 
-## Where can data be applied
+## Why should you care?
+
+Almost everything can (and will) be quantified and the data will increasingly affect our everyday lives.
+
+Important to understand at least the basics of data, statistics & "algorithms".
+
+Working with data offers a wide range of interesting opportunities!
+
+
+## Where can data be applied?
 
 * Business
     * Improved (personalised) services
@@ -85,8 +132,6 @@ Important questions:
 
 Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and [cantech letter](http://www.cantechletter.com/2013/01/will-predictive-analytics-in-education-widen-the-gap-between-the-arts-and-sciences0128/)
 
-
-
 ##
 
 <center>
@@ -97,15 +142,6 @@ Nate Silver predicting the Presidential election results in 2012
 
 Source: [DataPsych](http://datapsych.weebly.com/blog/mining-silvers-gold-the-basics-behind-nate-silvers-election-prediction-strategies)
 
-## 
-
-<center>
-<img src="http://everythingisnaked.com/wp-content/uploads/2011/08/gap-minder.jpg" alt="use cases" style="height: 500px;"/>
-</center>
-
-Hans Rosling communicating facts about the world
-
-Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty-of-visualized-statistics/)
 
 ##
 
@@ -123,7 +159,7 @@ Source: [DataKind](http://www.datakind.org/blog/using-satellite-images-to-unders
 <img src="http://static1.squarespace.com/static/50e4b513e4b0837383d619f3/t/52e67fbee4b063fbaac1e913/1390837705546/eviction+filings+to+homeless.jpg?format=1000w" alt="use cases" style="height: 300px;"/>
 </center>
 
-How can big data be used to prevent homelessness?
+Using big data to prevent homelessness in New York
 
 Source: [Sumall.org](http://www.sumall.org/homelessness/)
 
@@ -132,47 +168,116 @@ Source: [Sumall.org](http://www.sumall.org/homelessness/)
 
 ## Data journalism
 
-* Yle: Teemo
-* HS: Esa
+<center>
+<img src="./figures/yle_vaalit.png" alt="yle vaalit" style="height: 500px;"/>
+</center>
+
+Source: [Yle 13.4.2015](http://yle.fi/uutiset/kuka_on_oikeistolaisin_kuka_liberaalein__katso_miten_ehdokkaasi_asettuu_poliittiselle_nelikentalle/7919930)
 
 
 # Part 2: Data science at Reaktor
 
-## My background
+## My journey towards data science
 
-Studies
+Studies at Aalto (former Helsinki University of Technology)
 
-* MSc: Bioinformation technology at HUT
-* PhD: Bioinformatics at Aalto
+* Statistical machine learning and bioinformatics
+* Dissertation: [Probabilistic components of molecular interactions and drug responses][dissertation]
 
-Interests: statistics, probabilistic (Bayesian) modeling, information visualization, open source/data/science
+Data scientist at Reaktor
 
-Open stuff
+Open tools for open data: [Louhos] & [rOpenGov]
 
-Reaktor
+Interests: probabilistic (Bayesian) modeling, information visualization, open source/data/science
 
-Sum of some vague general direction + a lot of chances/coincidences
+I like: solving hard problems in various fields, learning and sharing
 
-## Reaktor Data Science
+[dissertation]: https://aaltodoc.aalto.fi/handle/123456789/13631
+[Louhos]: http://louhos.github.io/
+[rOpenGov]: http://ropengov.github.io/
 
+## Reaktor
+
+<center>
+<img src="./figures/reaktor_venndiagram.png" alt="Reaktor" style="height: 500px;"/>
+</center>
+
+## Case bikings
+
+FIXME: more figures + add link to material
+
+```{r bike1, echo=FALSE}
+# Preparation:
+# * clone this repo: https://github.com/apoikola/fillarilaskennat
+# * run source/plot_model.R
+# * save your workspace as an image with 'save_image()'
+
+# Load image
+if (F) {
+load("data/bikemodel_plots.RData")
+
+ggplot(bike.dat, aes(x=Day, y=Count, colour=WeekEnd)) + 
+  geom_point(size=1) + facet_grid(Year ~ LocationName) + 
+  labs(y="Määrä", x="Päivä", colour="Viikonloppu") +
+  scale_y_log10() + 
+  theme(legend.position="top")
+}
+```
+
+
+## Case elections
+
+Read more from [Louhos blog!](http://louhos.github.io/news/2015/04/17/vaalit2015-luokittelu/)
+
+FIXME: more figures + add link to material
+
+```{r elections1, echo=FALSE}
+if (F) {
+# Download data first from https://github.com/louhos/takomo/tree/master/vaalit2015/luokittelu
+load("data/yledata.RData")
+load("data/yle.RData")
+
+# Setup party colouring
+puolue<-c("IP","KD","KESK","KOK","KTP","M11","PIR","PS","PSYL","RKP","SDP","SKP","STP","VAS","VIHR")
+puolue.vari=c(brewer.pal(name="Paired",n=12),"black","gray40","brown")[
+  c(1,10,3,2,5,14,13,9,12,11,6,15,7,8,4)]
+names(puolue.vari)<-puolue
+
+p<-table(posterior$puolue,posterior$puolue.e)
+p.miss<-setdiff(rownames(p),toupper(colnames(p)))
+d.p<-dim(p)
+p<-cbind(p,matrix(0,d.p[1],length(p.miss))); colnames(p)[(d.p[2]+1):d.p[1]]<-tolower(p.miss)
+
+p<-p[order(rownames(p)),]
+p<-p[match(colnames(p),tolower(rownames(p))),]
+
+corrplot(prop.table(p,1),method="shade",is.corr=FALSE,addCoef.col=2,
+         addCoefasPercent=TRUE,col=colorRampPalette(c("white","white","black"),1)(80))
+}
+```
+
+## Data science vs. data journalism?
+
+<center>
+<img src="./figures/hs_asunnot.png" alt="HS asunnot" style="height: 500px;"/>
+</center>
+
+FIXME: Add Reaktor figure
+
+Source: [HS 11.4.2015](http://www.hs.fi/talous/a1428643622153)
+
+
+## Reaktor data science
+
+FIXME: update
+
+Open source tools
 
 Statistical modeling
 
 * dealing with noisy and missing data
 * taking uncertainty into account
 * predicting future events
-
-
-## Biking and weather
-
-
-## Election: party prediction
-
-## Data science vs. data journalism?
-
-* House prices from HS vs. Reaktor
-
-
 
 
 # Part 3: Data science in practice
@@ -288,6 +393,17 @@ FIXME: fix these
 
 [louhia-analytics]: http://www.louhia.fi/2015/01/25/ja-maailman-paras-analytiikkasofta/
 
+## It's not always complicated!
+
+<center>
+<img src="http://everythingisnaked.com/wp-content/uploads/2011/08/gap-minder.jpg" alt="use cases" style="height: 500px;"/>
+</center>
+
+Hans Rosling communicating facts about the world
+
+Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty-of-visualized-statistics/)
+
+
 ## Ideals of being data-driven
 
 * be **curious** (seek for evidence)
@@ -304,6 +420,7 @@ FIXME: fix these
 
 ## Experimentation & evidence-based decision making
 
+* Empirism
 * A/B testing
 * Lean startup
 * Agile development
@@ -364,6 +481,9 @@ Source: [Kaiser Fung on HBR][occam]
 * FIXME more or remove
 
 ## Conclusions
+
+
+Repeat why should I care!
 
 * amount of data does not matter, more important is where the data comes from (OCCAM)
 * Data can help in many ways
