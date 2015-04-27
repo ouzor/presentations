@@ -31,29 +31,19 @@ library("RCurl")
 ## TODO
 
 * try presentation mode
-* try including html frames from Yle and HS
 * check slides by others (Aalto)
 * parempi otsikko!
-* check this. 
-
 * reaktor logo on the first page at least
-* Slide sources somewhere, also slideshare link?
+* deploy on ouzor.github.io with sources
+* also PDF on slideshare?
 
-<article class="smaller">
-* make Source texts small!
-</article>
-
-Style
-
-* two columns
-* bigger figures (right col, or bg?), include source also
 
 # Part 1: What is data science?
 
 ## What do you think?
 
 <center>
-<img src="./wordcloud1.png" alt="use cases" style="height: 500px;"/>
+<img src="./figures/wordcloud1.png" alt="use cases" style="height: 500px;"/>
 </center>
 
 ```{r wordcloud, echo=FALSE, message=FALSE}
@@ -124,7 +114,7 @@ Working with data offers a wide range of interesting opportunities!
 * Quantified self
 * ...
 
-##  Improved (?) personalised services
+##  Improved personalised services
 
 
 <center>
@@ -317,11 +307,12 @@ Open source tools
 
 Consulting!
 
+
+
+
+
+
 # Part 3: Data science in practice
-
-## 
-
-FIXME: add photos: ifhackathon, taulu
 
 ## Data science uses cases
 
@@ -338,11 +329,11 @@ individual vs. team!
 ## 
 
 <center>
-<img src="http://www.marketingdistillery.com/wp-content/uploads/2014/11/mds_f.png" alt="skill set" style="width: 100%"/>
+<img src="http://www.marketingdistillery.com/wp-content/uploads/2014/11/mds_f.png" alt="skill set" style="height: 600px"/>
 </center>
 
 <article class="smaller">
-[Source][marketingdistillery]
+Source: [Marketingdistillery][marketingdistillery]
 </article>
 
 [marketingdistillery]: http://www.marketingdistillery.com/2014/11/29/is-data-science-a-buzzword-modern-data-scientist-defined/
@@ -351,6 +342,7 @@ individual vs. team!
 
 From [Data science done well looks easy][simplystats-easy]
 
+<article class="smaller">
 1. Define the question of interest
 1. Get the data
 1. Clean the data
@@ -359,13 +351,36 @@ From [Data science done well looks easy][simplystats-easy]
 1. Communicate the results
 1. Make your analysis reproducible
 1. (Iterate!)
+</article>
 
-"Yet far too much handcrafted work — what data scientists call “data wrangling,” “data munging” and “data janitor work” — is still required. Data scientists, according to interviews and expert estimates, spend from 50 percent to 80 percent of their time mired in this more mundane labor of collecting and preparing unruly digital data, before it can be explored for useful nuggets." - [Source][nyt-ds80]
+According to interviews and expert estimates, 50-80 % of data scientists' time is spent on handcrafted work (data "wrangling/munging").
 
-FIXME: fillaridata example
+<article class="smaller">
+* Source: [New York Times 18.8.2014][nyt-ds80]
+</article>
 
 [nyt-ds80]: http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html
 [simplystats-easy]: http://simplystatistics.org/2015/03/17/data-science-done-well-looks-easy-and-that-is-a-big-problem-for-data-scientists/
+
+
+
+## Basic tools
+
+<div class="columns-2">
+
+<center>
+<img src="./figures/kahvi_mac.png" alt="Kahvi" style="height: 450px;"/>
+</center>
+
+<center>
+<img src="./figures/taulu.png" alt="Kahvi" style="height: 450px;"/>
+</center>
+
+</div>
+
+<article class="smaller">
+* Photos: Juuso Parkkinen
+</article>
 
 ## Open data science: tools
 
@@ -416,23 +431,56 @@ Check also iPython notebooks!
 
 
 
+
+
+
 # Part 4: Data-driven culture
 
 ## What is important in the data science process?
 
-> * product
-> * < statistical methods
-> * < data access & munging
-> * < business case
-> * < getting to production
+data science tools & products  
+< statistical methods  
+< data access & munging  
+< business case  
+< getting to production  
 
-FIXME: fix these
-
-> Modified from [Louhia's blog post][louhia-analytics]
-
-> Is this all?
+<article class="smaller">
+* Modified from [Louhia's blog post][louhia-analytics]
+</article>
 
 [louhia-analytics]: http://www.louhia.fi/2015/01/25/ja-maailman-paras-analytiikkasofta/
+
+FIXME: add something, fix title
+
+## Ideals of being data-driven
+
+<article class="smaller">
+* be **curious** (seek for evidence)
+* be **active** (test, don’t just observe and analyse)
+* be **Bayesian** (understand uncertainties)
+* be **courageous** (act on the evidence)
+* be **agile** (learn, fail fast… but not too fast: collect enough evidence)
+* be **transparent** and **helpful** (show and share information, co-operate)
+* be **truthful** and **non-political** (don’t abuse data, work across silos)
+* be **wise** (there is a time to be data-driven and a time to be intuitive)
+</article>
+
+"Culture eats strategy for breakfast"
+
+<article class="smaller">
+* (attributed to P. Drucker, popularised by M. Fields)
+</article>
+
+
+## Experimentation & evidence-based decision making
+
+* Empirism
+* A/B testing
+* Lean startup
+* Agile development
+* Sami Honkonen's quote: "One experiment is better than a thousand meetings"
+
+FIXME: add picture of Sami
 
 ## It's not always complicated!
 
@@ -442,31 +490,15 @@ FIXME: fix these
 
 Hans Rosling communicating facts about the world
 
-Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty-of-visualized-statistics/)
+<article class="smaller">
+* Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty-of-visualized-statistics/)
+</article>
 
 
-## Ideals of being data-driven
 
-* be **curious** (seek for evidence)
-* be **active** (test, don’t just observe and analyse)
-* be **Bayesian** (understand uncertainties)
-* be **courageous** (act on the evidence)
-* be **agile** (learn, fail fast… but not too fast: collect enough evidence)
-* be **transparent** and **helpful** (show and share information, co-operate)
-* be **truthful** and **non-political** (don’t abuse data, work across silos)
-* be **wise** (there is a time to be data-driven and a time to be intuitive)
 
-"Culture eats strategy for breakfast"  
-(attributed to P. Drucker, popularised by M. Fields)
 
-## Experimentation & evidence-based decision making
 
-* Empirism
-* A/B testing
-* Lean startup
-* Agile development
-* Sami Honkonen's quote: "One experiment is better than a thousand meetings"
-* Evidence-based medicine
 
 # Part 5: Is data almighty?
 
@@ -476,8 +508,9 @@ Source: [Everything is Naked](http://everythingisnaked.com/gap-minder-the-beauty
 <img src="http://na2.www.gartner.com/imagesrv/newsroom/images/HC_ET_2014.jpg" alt="Gartner hype curve" style="width: 100%;"/>
 </center>
 
-
-Source: [Gartner][gartner-hypecurve]
+<article class="smaller">
+* Source: [Gartner][gartner-hypecurve]
+</article>
 
 [gartner-hypecurve]: http://www.gartner.com/newsroom/id/2819918
 
@@ -486,7 +519,9 @@ Source: [Gartner][gartner-hypecurve]
 <img src="http://i.imgur.com/xqOt9mP.png" alt="Cor1" style="width: 80%;"/>
 <img src="http://tylervigen.com/correlation_project/correlation_images/per-capita-consumption-of-cheese-us_number-of-people-who-died-by-becoming-tangled-in-their-bedsheets.png" alt="Cor2" style="width: 80%;"/>
 
-Source: [Tylergive](http://tylervigen.com/)
+<article class="smaller">
+* Source: [Tylergive](http://tylervigen.com/)
+</article>
 
 ## Problems with Big Data?
 

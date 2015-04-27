@@ -45,7 +45,7 @@ keywords <- survey.res[,3] %>%
   table
   
 # Word cloud
-png("wordcloud1.png")
+png("figures/wordcloud1.png")
 set.seed(123)
 wordcloud(words=names(keywords), freq=keywords, scale=c(4,0.7), min.freq = 1,
           random.order=FALSE, random.color=FALSE, rot.per=0.0, 
