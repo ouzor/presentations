@@ -2,10 +2,10 @@
 title: "Thoughts on Data Science"
 author:
   name: 'Juuso Parkkinen, @ouzor, data scientist at #reaktor'
-date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha"
+date: 'Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha'
 output:
   ioslides_presentation:
-    self_contained: false
+    self_contained: no
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE}
@@ -120,8 +120,6 @@ Improved personalised services
 <article class="smaller">
 * Sources: [stanford2009](http://stanford2009.wikispaces.com/5_Facebook+5.04) and [cantech letter](http://www.cantechletter.com/2013/01/will-predictive-analytics-in-education-widen-the-gap-between-the-arts-and-sciences0128/)
 </article>
-
-
 
 
 ##
