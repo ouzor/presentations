@@ -5,7 +5,6 @@ author:
 date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha"
 output:
   ioslides_presentation:
-    css: custom.css
     widescreen: false
     smaller: false
 ---
@@ -202,9 +201,11 @@ I like: solving hard problems in various fields, learning and sharing
 [Louhos]: http://louhos.github.io/
 [rOpenGov]: http://ropengov.github.io/
 
-## 
+## Reaktor
 
+<!--
 <img src="./figures/reaktor_logo.png" alt="Reaktor" style="height: 50px;"/>
+-->
 
 <center>
 <img src="./figures/reaktor_venndiagram.png" alt="Reaktor" style="height: 500px;"/>
@@ -326,6 +327,7 @@ yle %>%
   grid.table
 ```
 
+FIXME: BY johan Himberg
 Read more from [Louhos blog!](http://louhos.github.io/news/2015/04/17/vaalit2015-luokittelu/)
 
 ## Data science vs. data journalism?
@@ -440,20 +442,24 @@ According to interviews and expert estimates, 50-80 % of data scientists' time i
 
 Exploratory data analysis
 
+<article class="smaller">
 * goal: find out whether the data fits the question of interest
 * visualise data
 * identify missing values
+</article>
 
 Probabilistic modeling
 
+<article class="smaller">
 * goal: make reliable inference based on data
+* principled way to include prior assumptions
 * dealing with noisy and missing data
 * taking uncertainty into account
 * combining multiple data sources
 * understanding relationships between variables
 * uncover hidden structure
 * predict missing data and future events
-
+</article>
 
 ## Data science in action!
 
