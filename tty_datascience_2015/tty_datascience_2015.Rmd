@@ -5,8 +5,7 @@ author:
 date: "Programmatic Content Management course @TampereUniTech, 28 Apr 2015, #ohsiha"
 output:
   ioslides_presentation:
-    widescreen: false
-    smaller: false
+    self_contained: false
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE}
@@ -201,11 +200,9 @@ I like: solving hard problems in various fields, learning and sharing
 [Louhos]: http://louhos.github.io/
 [rOpenGov]: http://ropengov.github.io/
 
-## Reaktor
+##
 
-<!--
-<img src="./figures/reaktor_logo.png" alt="Reaktor" style="height: 50px;"/>
--->
+<img src="./figures/Reaktor_Logo_300px.jpg" alt="Reaktor" style="height: 50px;"/>
 
 <center>
 <img src="./figures/reaktor_venndiagram.png" alt="Reaktor" style="height: 500px;"/>
@@ -327,8 +324,7 @@ yle %>%
   grid.table
 ```
 
-FIXME: BY johan Himberg
-Read more from [Louhos blog!](http://louhos.github.io/news/2015/04/17/vaalit2015-luokittelu/)
+Done by [Johan Himberg](https://twitter.com/ingaskrap), read more from [Louhos blog!](http://louhos.github.io/news/2015/04/17/vaalit2015-luokittelu/)
 
 ## Data science vs. data journalism?
 
@@ -633,8 +629,6 @@ Conclusion: Amount of data does not matter, but how it was collected!
 
 ## Conclusions
 
-Please give feedback here: http://goo.gl/forms/B24pPFkak9
-
 Recap: Understand statistics, because
 
 <article class="smaller">
@@ -658,9 +652,6 @@ Also
 
 * Open data science (analyses, tools, data)
 * Data science communities in Finland
-* Beginner data scientist stuff
-* Blogs and other interesting resources
-* Number of lecture participants :)
 
 ## Extra: Open data science analyses
 
@@ -725,21 +716,3 @@ Other
 * \#r-project & #louhos @IRCnet
 * Open Knowledge Finland
 * Finnish Open Data Ecosystem
-
-
-## Extra: Beginner data scientist stuff
-
-Start playing with open data!
-
-Some good reads
-
-* http://www.sharpsightlabs.com/start-with-data-visualization-manipulation/
-
-
-## Extra: Blogs and other resources
-
-Videos
-
-* [Hans Rosling](https://www.youtube.com/watch?v=QpdyCJi3Ib4)
-* [Youtube: Why you should study statistics?](http://www.youtube.com/watch?v=wV0Ks7aS7YI)
-
