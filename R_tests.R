@@ -57,6 +57,13 @@ dev.off()
 guesses <- as.numeric(survey.res[,4])
 qplot(guesses)
 
+df <- data.frame(gues = guesses)
+# gs <- seq(min(guesses), max(guesses), 1)
+# df.norm <- data.frame(gs=gs, gnorm= dnorm(gs, mean=mean(guesses), sd=sd(guesses)))
+# ggplot(df, aes(x=gues)) + geom_histogram() +
+#   geom_point(data=df.norm, aes(x=gs, y=gnorm))
+  
+
 
 ## fillarilaskennat #########
 
