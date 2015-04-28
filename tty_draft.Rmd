@@ -85,6 +85,8 @@ wordcloud(words=names(keywords), freq=keywords, scale=c(4,0.7), min.freq = 1,
 
 ## What do I think?
 
+There are multiple definitions from various points of views, all at least partially relevant pieces of the whole.
+
 Important questions:
 
 * Where can data science be applied?
@@ -92,14 +94,16 @@ Important questions:
 * What does it mean to be data-driven?
 * What data science can NOT do?
 
+
 ## Why should you care?
+
+Important to understand at least the basics of data, statistics & algorithms".
 
 Almost everything can (and will) be quantified and the data will increasingly affect our everyday lives.
 
-Important to understand at least the basics of data, statistics & "algorithms".
-
 Working with data offers a wide range of interesting opportunities!
 
+More and more data science services will be used.
 
 ## Where can data be applied?
 
@@ -433,15 +437,18 @@ FIXME: add something, fix title
 </article>
 
 
-## Experimentation & evidence-based decision making
+## Experimentation
 
+* Evidence-based decision making
 * Empirism
 * A/B testing
 * Lean startup
 * Agile development
-* Sami Honkonen's quote: "One experiment is better than a thousand meetings"
+* "One experiment is worth a thousand meetings." [-\@samihonkonen](http://www.samihonkonen.com/tv-interview-on-leadership/)
 
-FIXME: add picture of Sami
+<center>
+<img src="http://www.samihonkonen.com/wp-content/uploads/2015/03/huomenta-suomi.png" alt="use cases" style="height: 200px;"/>
+</center>
 
 ## It's not always complicated!
 
