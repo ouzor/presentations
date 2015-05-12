@@ -339,7 +339,7 @@ Done by [Johan Himberg](https://twitter.com/ingaskrap), read more from [Louhos b
 </center>
 
 <article class="smaller">
-* Source: Coming soon by Reaktor!
+* Source: [Kannattaako Kauppa](http://kannattaakokauppa.fi/#/)
 </article>
 
 </div>
@@ -349,6 +349,7 @@ Done by [Johan Himberg](https://twitter.com/ingaskrap), read more from [Louhos b
 <img src="./figures/hs_asunnot.png" alt="HS asunnot" style="height: 500px;"/>
 </center>
 -->
+
 
 
 
