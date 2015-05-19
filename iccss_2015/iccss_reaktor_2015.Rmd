@@ -1,0 +1,71 @@
+---
+title: "Probabilistic programming for understanding regional trends in apartment prices"
+author:
+  name: 'Juuso Parkkinen, @ouzor, data scientist at #reaktor'
+date: 'International Conference on Computational Social Science, 11 Jun 2015, #iccss'
+output:
+  ioslides_presentation:
+    self_contained: yes
+---
+
+```{r setup, echo=FALSE, results='hide', message=FALSE}
+# Load packages
+library("sp")
+# library("dplyr")
+# library("tidyr")
+# library("reshape2")
+
+load("/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/data/pnro_hinnat_sp_raw-and-model.RData")
+
+```
+
+
+## Big data is imperfect
+
+* Data is noisy and partly missing
+* Has lot of dependencies between data points (not independent)
+
+FIGURE: map with holes
+
+```{r map1, echo=FALSE, fig.height=4}
+spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
+```
+
+
+## Probabilistic modeling helps
+
+* Handling missing data and uncertainty
+* Handling complicated dependency structures
+
+FIGURES: maps with holes and model
+
+```{r map2, echo=FALSE}
+
+# spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
+
+```
+
+
+## Example results
+
+* Urbanisation?
+
+## Probabilistic programming
+
+Shift from model-specific packages to general and flexible tools
+
+E.g. [STAN](http://mc-stan.org/index.html)
+
+## We can do it!
+
+<center>
+<img src="reaktor_venndiagram.png" alt="use cases" style="width: 300px;"/>
+</center>
+
+See more at
+
+[Reaktor Data Science](http://reaktor.com/datascience)
+
+[Kannattaakokauppa.fi](http://kannattaakokauppa.fi/)
+
+FIXME: English versions out yet?
