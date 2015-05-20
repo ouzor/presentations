@@ -6,6 +6,7 @@ date: 'International Conference on Computational Social Science, 11 Jun 2015, #i
 output:
   ioslides_presentation:
     self_contained: yes
+    css: custom.css
 ---
 
 ```{r setup, echo=FALSE, results='hide', message=FALSE}
@@ -15,20 +16,27 @@ library("sp")
 # library("tidyr")
 # library("reshape2")
 
-load("/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/data/pnro_hinnat_sp_raw-and-model.RData")
+# load("/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/data/pnro_hinnat_sp_raw-and-model.RData")
 
 ```
 
 
 ## Big data is imperfect
 
-* Data is noisy and partly missing
-* Has lot of dependencies between data points (not independent)
+<div class="columns-2">
 
-FIGURE: map with holes
+* Data is noisy and partly missing
+* Has complicated of dependencies between data points
+* Conclusions based on such data can be misleading or plain wrong
+
+<center>
+<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-only-en.png" alt="raw data" style="height: 500px;"/>
+</center>
+
+</div>
 
 ```{r map1, echo=FALSE, fig.height=4}
-spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
+# spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
 ```
 
 
@@ -37,7 +45,9 @@ spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="
 * Handling missing data and uncertainty
 * Handling complicated dependency structures
 
-FIGURES: maps with holes and model
+<center>
+<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-vs-model-en.png" alt="raw data" style="height: 400px;"/>
+</center>
 
 ```{r map2, echo=FALSE}
 
@@ -46,26 +56,52 @@ FIGURES: maps with holes and model
 ```
 
 
-## Example results
+## Results
 
-* Urbanisation?
+Adding population density to the model reveals general urbanisation patterns
+
+<center>
+<img src="http://louhos.github.io/figs/2015-05-19-urbanisaatio/unnamed-chunk-1-1.png" alt="raw data" style="height: 400px;"/>
+</center>
 
 ## Probabilistic programming
 
-Shift from model-specific packages to general and flexible tools
+* Shift from model-specific packages to general and flexible tools
+* Rapid iterative model development
+* E.g. [STAN](http://mc-stan.org/index.html)
 
-E.g. [STAN](http://mc-stan.org/index.html)
+```{r, eval=FALSE}
+model {
+    vector[N] obs_mean;
+    vector[N] obs_sigma;
+    row_vector[6] x;
+    matrix[6, 6] LSigma_beta1;
+    LSigma_beta1 <- diag_pre_multiply(tau1, LOmega1);
+    LOmega1 ~ lkj_corr_cholesky(2); tau1 ~ lognormal(-2., 1.);    
+    mean_beta ~ normal(0, 5);
+    for (i in 1:M1) beta1[i] ~ multi_normal_cholesky(zero_beta, LSigma_beta1);
+    for (i in 1:N) {
+           x <- X[i];
+           obs_mean[i] <- x * (mean_beta + beta2[l2[i]] + beta1[l1[i]])' + head(x, 3) * beta[pnro[i]]'; 
+           obs_sigma[i] <- sqrt(ysigma^2 + sigma^2/count[i]); }
+    sigma ~ normal(0, 2);
+    ysigma ~ normal(0, 2);
+    df ~ normal(0, 20);
+    lprice ~ student_t(df+1, obs_mean, obs_sigma); // Reparameterize as a scale mixture?
+    }
+```
+
 
 ## We can do it!
 
 <center>
-<img src="reaktor_venndiagram.png" alt="use cases" style="width: 300px;"/>
+<img src="reaktor_venndiagram.png" alt="use cases" style="width: 400px;"/>
 </center>
+
+FIXME: English versions out yet?
 
 See more at
 
-[Reaktor Data Science](http://reaktor.com/datascience)
+* [Reaktor Data Science](http://reaktor.com/datascience)
+* [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/)
 
-[Kannattaakokauppa.fi](http://kannattaakokauppa.fi/)
-
-FIXME: English versions out yet?
