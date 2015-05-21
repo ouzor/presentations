@@ -6,30 +6,18 @@ date: 'International Conference on Computational Social Science, 11 Jun 2015, #i
 output:
   ioslides_presentation:
     css: custom.css
+    standalone: yes
 ---
 
-```{r setup, echo=FALSE, results='hide', message=FALSE}
-# Load packages
-library("sp")
-# library("dplyr")
-# library("tidyr")
-# library("reshape2")
-
-# load("/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/data/pnro_hinnat_sp_raw-and-model.RData")
-
-```
-
-
-## (Big) Data is often imperfect
+## (Big) Data is complicated
 
 <div class="columns-2">
 
+* More data means more complexity
+* Dependencies and hierarchies between data points
 * Noise and missing data
-* Complicated of dependencies between data points
 * Observational data (lacks controls)
-* Conclusions based on such data can be misleading or plain wrong
-
-FIXME: fix scale
+* Conclusions based on raw data can be misleading or plain wrong
 
 <center>
 <img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-only-en.png" alt="raw data" style="height: 500px;"/>
@@ -37,26 +25,16 @@ FIXME: fix scale
 
 </div>
 
-```{r map1, echo=FALSE, fig.height=4}
-# spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
-```
-
 
 ## Probabilistic modeling helps
 
-* Handling missing data and uncertainty
-* Handling complicated dependency structures
+* Making interesting and reliable findings possible
+* Handling missing data, uncertainty and dependencies
 * Combining multiple data sources
 
 <center>
-<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-vs-model-en.png" alt="raw data" style="height: 400px;"/>
+<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-vs-model-en.png" alt="raw data" style="height: 350px;"/>
 </center>
-
-```{r map2, echo=FALSE}
-
-# spplot(pnro.hinnat.comb, zcol="lprice.raw", lwd=0.00, at=seq(-0.5, 3, .1), col="transparent", main="Keskihinta raakana (log)")
-
-```
 
 
 ## Results
@@ -64,15 +42,15 @@ FIXME: fix scale
 Including population density to the model reveals general urbanisation patterns
 
 <center>
-<img src="http://louhos.github.io/figs/2015-05-19-urbanisaatio/unnamed-chunk-1-1.png" alt="raw data" style="height: 400px;"/>
+<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/trend-population-2015.png" alt="raw data" style="height: 400px;"/>
 </center>
 
 ## Probabilistic programming
 
 * Shift from model-specific packages to flexible tools
 * Rapid iterative model development
+* Towards big data applications with efficient approximative solutions
 * [STAN](http://mc-stan.org/index.html) for full Bayesian statistical inference
-
 
 
 ```{r, eval=FALSE}
@@ -91,17 +69,32 @@ model {
 ```
 
 
-## Data Science at Reaktor
+## Conclusions
 
-<center>
-<img src="reaktor_venndiagram_logo.png" alt="use cases" style="width: 400px;"/>
-</center>
+Big data needs big modelling
 
-FIXME: English versions out yet?
+Modelling tools help in tackling complex problems
 
+<br>
+
+<div class="columns-2">
+
+<article class="smaller">
 See more at
 
 * [Reaktor Data Science](http://reaktor.com/datascience)
-* [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/)
-* [Source code](https://github.com/reaktor/Neliohinnat)
+* [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/) and  
+[source code](https://github.com/reaktor/Neliohinnat)
+* FIXME: English versions out yet?
+* FIXME: push figures to github and link to them
+</article>
+
+<center>
+<img src="reaktor_venndiagram_logo.png" alt="use cases" style="width: 100%;"/>
+</center>
+
+</div>
+
+
+
 

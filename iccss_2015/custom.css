@@ -10,5 +10,6 @@ https://github.com/rstudio/rmarkdown/blob/master/inst/rmd/ioslides/ioslides-13.5
 
 /* For changing code chunk font size */
 .prettyprint {
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.3;
 }
