@@ -1,7 +1,7 @@
 ---
 title: "Probabilistic programming for understanding regional trends in apartment prices"
 author:
-  name: 'Juuso Parkkinen, @ouzor, data scientist at #reaktor'
+  name: 'Juuso Parkkinen, @ouzor, data scientist at #Reaktor'
 date: 'International Conference on Computational Social Science, 11 Jun 2015, #iccss'
 output:
   ioslides_presentation:
@@ -9,71 +9,85 @@ output:
     standalone: yes
 ---
 
-## (Big) Data is complicated
+## TODO 
+
+* FIXME: English versions out yet?
+* FIXME: push figures to github and link to them
+- clarify colour scale to emphasize diffs
+- clarify: prob modeling fills holes!
+- maybe some process chart about STAN (what is automatic what is not)
+- simplify urbanisation
+- remove multiple data source
+- emphasize that holes are filled with no external data
+- remove "shift" sentence? can say it a loud
+- stan on the last slide
+- remove or simplify stan code
+
+## Challenges with (big) data
 
 <div class="columns-2">
 
-* More data means more complexity
-* Dependencies and hierarchies between data points
-* Noise and missing data
-* Observational data (lacks controls)
-* Conclusions based on raw data can be misleading or plain wrong
+More data means more complexity.
+
+Data points have dependencies and hierarchies.
+
+Data is noisy and partly missing.
+
+**Conclusions based on raw data are often misleading.**
 
 <center>
-<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-only-en.png" alt="raw data" style="height: 500px;"/>
+<img src="https://raw.githubusercontent.com/reaktor/Neliohinnat/master/figs/raw-only-en.png" alt="raw data" style="height: 500px;"/>
 </center>
 
 </div>
 
 
-## Probabilistic modeling helps
+## Probabilistic modeling
 
-* Making interesting and reliable findings possible
-* Handling missing data, uncertainty and dependencies
-* Combining multiple data sources
+Helps in handling missing data, uncertainty and dependencies.
+
+Example: Model of regional apartment prices in Finland
 
 <center>
-<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/raw-vs-model-en.png" alt="raw data" style="height: 350px;"/>
+<img src="https://raw.githubusercontent.com/reaktor/Neliohinnat/master/figs/raw-vs-model-en.png" alt="raw data" style="height: 400px;"/>
 </center>
 
 
-## Results
+## Probabilistic modeling (2)
 
-Including population density to the model reveals general urbanisation patterns
+Makes interesting and reliable findings possible.
+
+Example: Clear urbanisation trend visible
 
 <center>
-<img src="/Users/ouzor/Documents/workspace/reaktor/Neliohinnat/figs/trend-population-2015.png" alt="raw data" style="height: 400px;"/>
+<img src="https://raw.githubusercontent.com/reaktor/Neliohinnat/master/figs/trend-population-2015.png" alt="raw data" style="height: 400px;"/>
 </center>
 
 ## Probabilistic programming
 
-* Shift from model-specific packages to flexible tools
-* Rapid iterative model development
-* Towards big data applications with efficient approximative solutions
-* [STAN](http://mc-stan.org/index.html) for full Bayesian statistical inference
+Automated inference for probabilistic models
 
+* problem $\rightarrow$ model $\rightarrow$ inference $\rightarrow$ results
+* [STAN](http://mc-stan.org/index.html) for full Bayesian statistical inference
 
 ```{r, eval=FALSE}
 model {
-    LOmega1 ~ lkj_corr_cholesky(2); tau1 ~ lognormal(-2., 1.);    
-    mean_beta ~ normal(0, 5);
-    for (i in 1:M1) beta1[i] ~ multi_normal_cholesky(zero_beta, LSigma_beta1);
-    for (i in 1:N) {
-           obs_mean[i] <- x * (mean_beta + beta2[l2[i]] + beta1[l1[i]]); 
-           obs_sigma[i] <- sqrt(ysigma^2 + sigma^2/count[i]); }
-    sigma ~ normal(0, 2);
-    ysigma ~ normal(0, 2);
-    df ~ normal(0, 20);
-    lprice ~ student_t(df+1, obs_mean, obs_sigma);
-    }
+    y ~ normal(x, sigma);
+    x ~ normal(0, 2);
+    sigma ~ uniform(0, 10);
+}
 ```
+
+
+* rapid iterative model development
+* towards big data applications with efficient approximative solutions
 
 
 ## Conclusions
 
-Big data needs big modelling
+Big data needs big modelling.
 
-Modelling tools help in tackling complex problems
+Flexible modelling tools available, such as [STAN](http://mc-stan.org/index.html).
 
 <br>
 
@@ -85,8 +99,7 @@ See more at
 * [Reaktor Data Science](http://reaktor.com/datascience)
 * [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/) and  
 [source code](https://github.com/reaktor/Neliohinnat)
-* FIXME: English versions out yet?
-* FIXME: push figures to github and link to them
+
 </article>
 
 <center>
