@@ -2,26 +2,12 @@
 title: "Probabilistic programming for understanding regional trends in apartment prices"
 author:
   name: 'Juuso Parkkinen, @ouzor, data scientist at #Reaktor'
-date: 'International Conference on Computational Social Science, 11 Jun 2015, #iccss'
+date: 'International Conference on Computational Social Science, Helsinki, 11 Jun 2015, #iccss2015'
 output:
   ioslides_presentation:
     css: custom.css
     standalone: yes
 ---
-
-## TODO 
-
-* FIXME: English versions out yet?
-* FIXME: push figures to github and link to them
-- clarify colour scale to emphasize diffs
-- clarify: prob modeling fills holes!
-- maybe some process chart about STAN (what is automatic what is not)
-- simplify urbanisation
-- remove multiple data source
-- emphasize that holes are filled with no external data
-- remove "shift" sentence? can say it a loud
-- stan on the last slide
-- remove or simplify stan code
 
 ## Challenges with (big) data
 
@@ -97,8 +83,10 @@ Flexible modelling tools available, such as [STAN](http://mc-stan.org/index.html
 See more at
 
 * [Reaktor Data Science](http://reaktor.com/datascience)
-* [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/) and  
+* [Kannattaakokauppa.fi](http://kannattaakokauppa.fi/#/en/) with  
+[technical description](http://ropengov.github.io/r/2015/06/11/apartment-prices/) and  
 [source code](https://github.com/reaktor/Neliohinnat)
+* [Slide source](https://github.com/reaktor/Neliohinnat/tree/master/iccss_2015/iccss_reaktor_2015.Rmd)
 
 </article>
 
